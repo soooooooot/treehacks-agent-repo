@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useMemo } from "react";
+import AnimeCat from "./components/AnimeCat";
 
 const VALENTINES = [
   "You make my heart skip a beat",
@@ -199,6 +200,9 @@ export default function Home() {
           </div>
         </div>
       ))}
+
+      {/* Cute anime cat character */}
+      <AnimeCat />
     </main>
   );
 }
