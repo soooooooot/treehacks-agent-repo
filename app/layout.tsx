@@ -15,8 +15,12 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Random Valentines",
-  description: "A whimsical popup of random valentine messages",
+  title: "Ian's Personal TreeHacks Site",
+  description: "Ian's personal site for TreeHacks - spreading love for Interaction Company",
+  openGraph: {
+    title: "Ian's Personal TreeHacks Site",
+    description: "Ian's personal site for TreeHacks - spreading love for Interaction Company",
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${greatVibes.variable} ${cormorant.variable}`}>
+      <head>
+        <meta name="author" content="Ian" />
+        <meta name="keywords" content="TreeHacks, Ian, Interaction Company, personal website" />
+      </head>
       <body className="min-h-screen overflow-x-hidden bg-[#fdf6f8] text-[#2d1b2e] antialiased">
         {children}
       </body>

@@ -138,15 +138,47 @@ export default function Home() {
         ))}
       </div>
 
+      {/* Header banner */}
+      <div className="pointer-events-none relative z-20 px-6 pt-8">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-2 text-center">
+            <span className="inline-block rounded-full bg-[#8b2942] px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-white shadow-lg">
+              TreeHacks 2026
+            </span>
+          </div>
+          <h2 className="text-center text-2xl font-medium text-[#8b2942] md:text-3xl" style={{ fontFamily: "var(--font-body)" }}>
+            Ian's Personal Site
+          </h2>
+        </div>
+      </div>
+
       {/* Hero area */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
-        <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Random Valentines
-        </h1>
-        <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
+      <div className="relative z-10 flex min-h-[calc(100vh-120px)] flex-col items-center justify-center px-6 py-8">
+        {/* Main message - Interaction Company */}
+        <div className="mb-8 text-center">
+          <div className="relative inline-block">
+            <div className="absolute -inset-4 animate-pulse-glow rounded-3xl bg-gradient-to-r from-[#8b2942]/20 via-[#c45c7a]/20 to-[#8b2942]/20 blur-xl"></div>
+            <h1
+              className="relative mb-2 text-7xl font-[family-name:var(--font-display)] text-[#8b2942] drop-shadow-lg md:text-9xl"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              We love
+            </h1>
+            <div className="relative rounded-2xl border-4 border-[#8b2942] bg-gradient-to-br from-[#fdf6f8] via-[#f8e8ec] to-[#fdf6f8] px-8 py-6 shadow-2xl md:px-12 md:py-8">
+              <p className="text-4xl font-bold uppercase tracking-wide text-[#8b2942] md:text-6xl" style={{ fontFamily: "var(--font-body)" }}>
+                Interaction Company
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Subtitle */}
+        <p className="mb-8 max-w-2xl text-center text-xl font-medium text-[#c45c7a] md:text-2xl" style={{ fontFamily: "var(--font-body)" }}>
+          A fast-paced valentine experience
+        </p>
+
+        {/* Call to action */}
+        <p className="mb-6 text-center text-lg text-[#8b2942] opacity-80">
           Click anywhere or press space for a valentine
         </p>
         <button
@@ -154,11 +186,18 @@ export default function Home() {
             e.stopPropagation();
             addPopup();
           }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
+          className="rounded-full bg-[#8b2942] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#c45c7a] hover:shadow-xl active:scale-95"
           style={{ fontFamily: "var(--font-body)" }}
         >
           Send a Valentine
         </button>
+      </div>
+
+      {/* Footer signature */}
+      <div className="pointer-events-none absolute bottom-6 left-0 right-0 z-20 text-center">
+        <p className="text-sm text-[#8b2942]/60" style={{ fontFamily: "var(--font-body)" }}>
+          Made with 💖 by Ian for TreeHacks
+        </p>
       </div>
 
       {/* Popup cards */}
