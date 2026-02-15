@@ -3,11 +3,11 @@
 @theme {
   --font-display: "Great Vibes", cursive;
   --font-body: "Cormorant Garamond", serif;
-  --color-rose-deep: #8b2942;
-  --color-rose-soft: #c45c7a;
-  --color-blush: #f8e8ec;
-  --color-cream: #fdf6f8;
-  --color-gold: #d4a574;
+  --color-rose-deep: #ffffff;
+  --color-rose-soft: #ffffff;
+  --color-blush: #ffffff;
+  --color-cream: #ffffff;
+  --color-gold: #ffffff;
   --color-ink: #2d1b2e;
 }
 
@@ -57,10 +57,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(196, 92, 122, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(196, 92, 122, 0.5);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
   }
 }
 
