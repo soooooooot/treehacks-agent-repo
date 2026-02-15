@@ -3,17 +3,55 @@
 @theme {
   --font-display: "Great Vibes", cursive;
   --font-body: "Cormorant Garamond", serif;
-  --color-rose-deep: #8b2942;
-  --color-rose-soft: #c45c7a;
-  --color-blush: #f8e8ec;
-  --color-cream: #fdf6f8;
-  --color-gold: #d4a574;
-  --color-ink: #2d1b2e;
+  
+  /* Pink Color Palette */
+  --color-light-pink: #FFB6C1;
+  --color-hot-pink: #FF69B4;
+  --color-deep-pink: #FF1493;
+  --color-pink: #FFC0CB;
+  --color-material-pink: #E91E63;
+  --color-pale-violet-red: #DB7093;
+  --color-medium-violet-red: #C71585;
+  
+  /* Pink-themed semantic colors */
+  --color-rose-deep: #FF1493;
+  --color-rose-soft: #FF69B4;
+  --color-blush: #FFE4E1;
+  --color-cream: #FFF0F5;
+  --color-gold: #FF69B4;
+  --color-ink: #C71585;
+  
+  /* Background colors */
+  --color-bg-primary: #FFF0F5;
+  --color-bg-secondary: #FFE4E1;
+  --color-bg-accent: #FFC0CB;
+  
+  /* Text colors */
+  --color-text-primary: #C71585;
+  --color-text-secondary: #DB7093;
+  --color-text-light: #FF69B4;
+  
+  /* Button colors */
+  --color-button-primary: #FF1493;
+  --color-button-primary-hover: #FF69B4;
+  --color-button-secondary: #E91E63;
+  --color-button-disabled: #FFB6C1;
+  
+  /* Border colors */
+  --color-border-primary: #FF69B4;
+  --color-border-secondary: #FFB6C1;
+  --color-border-accent: #FF1493;
 }
 
 @layer base {
   html {
     font-family: var(--font-body);
+    background-color: var(--color-bg-primary);
+  }
+  
+  body {
+    background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 50%, #FFC0CB 100%);
+    color: var(--color-text-primary);
   }
 }
 
@@ -57,10 +95,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(196, 92, 122, 0.3);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
   }
   50% {
-    box-shadow: 0 0 40px rgba(196, 92, 122, 0.5);
+    box-shadow: 0 0 40px rgba(255, 20, 147, 0.7);
   }
 }
 
@@ -70,6 +108,15 @@
   }
   50% {
     transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }
 
@@ -91,4 +138,39 @@
 
 .animate-heart-beat {
   animation: heart-beat 1.2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #FFB6C1 0%, #FF69B4 20%, #FFB6C1 40%, #FFB6C1 100%);
+  background-size: 1000px 100%;
+}
+
+/* Pink-themed utilities */
+.pink-gradient-bg {
+  background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 50%, #FF1493 100%);
+}
+
+.pink-gradient-text {
+  background: linear-gradient(135deg, #FF1493 0%, #FF69B4 50%, #E91E63 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pink-shadow {
+  box-shadow: 0 4px 14px 0 rgba(255, 20, 147, 0.39);
+}
+
+.pink-shadow-lg {
+  box-shadow: 0 10px 40px rgba(255, 20, 147, 0.5);
+}
+
+.pink-border {
+  border: 2px solid var(--color-border-primary);
+}
+
+.pink-glow {
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6),
+              0 0 40px rgba(255, 20, 147, 0.4);
 }
