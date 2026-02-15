@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Great Vibes", cursive;
-  --font-body: "Cormorant Garamond", serif;
+  --font-display: "Comic Sans MS", "Comic Sans", cursive;
+  --font-body: "Comic Sans MS", "Comic Sans", cursive;
   --color-rose-deep: #8b2942;
   --color-rose-soft: #c45c7a;
   --color-blush: #f8e8ec;
@@ -13,7 +13,15 @@
 
 @layer base {
   html {
-    font-family: var(--font-body);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+  
+  body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+  
+  * {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
   }
 }
 
