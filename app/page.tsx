@@ -35,7 +35,7 @@ const VALENTINES = [
   "You're my favorite person to annoy",
 ];
 
-const HEART_EMOJIS = ["💕", "💖", "💗", "💓", "💝", "💘", "💞", "❤️", "💜", "💗"];
+const HEART_EMOJIS = ["💚", "💛", "🌿", "🍀", "🌱", "🌳", "🌲", "🌴", "🎋", "☘️"];
 
 function randomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -118,7 +118,7 @@ export default function Home() {
 
   return (
     <main
-      className="relative min-h-screen cursor-pointer overflow-hidden"
+      className="relative min-h-screen cursor-pointer overflow-hidden bg-gradient-to-br from-[#c8e6c9] via-[#a5d6a7] to-[#81c784]"
       onClick={handleClick}
     >
       {/* Floating hearts background */}
@@ -126,11 +126,12 @@ export default function Home() {
         {floatingHearts.map((heart, i) => (
           <span
             key={i}
-            className="absolute text-2xl opacity-20"
+            className="absolute text-2xl opacity-30"
             style={{
               left: `${heart.left}%`,
               top: `${heart.top}%`,
               animation: `float ${heart.duration}s ease-in-out ${heart.delay}s infinite`,
+              filter: "drop-shadow(0 2px 4px rgba(27, 94, 32, 0.3))",
             }}
           >
             {heart.emoji}
@@ -141,12 +142,12 @@ export default function Home() {
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
         <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
+          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#1b5e20] drop-shadow-lg md:text-8xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Random Valentines
         </h1>
-        <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
+        <p className="mb-12 text-center text-xl text-[#2e7d32] drop-shadow-md md:text-2xl font-medium">
           Click anywhere or press space for a valentine
         </p>
         <button
@@ -154,7 +155,7 @@ export default function Home() {
             e.stopPropagation();
             addPopup();
           }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
+          className="rounded-full bg-gradient-to-r from-[#2e7d32] to-[#388e3c] px-8 py-4 text-white font-semibold transition-all hover:from-[#1b5e20] hover:to-[#2e7d32] hover:scale-105 hover:shadow-xl active:scale-95 shadow-lg border-2 border-[#1b5e20]"
           style={{ fontFamily: "var(--font-body)" }}
         >
           Send a Valentine
@@ -175,25 +176,26 @@ export default function Home() {
           onClick={(e) => e.stopPropagation()}
         >
           <div
-            className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#fdf6f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+            className="animate-pop-in rounded-2xl border-3 border-[#558b2f] bg-gradient-to-br from-[#f9fdf7] to-[#f1f8e9] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl hover:border-[#2e7d32]"
             style={{
               animationDelay: `${popup.delay}ms`,
-              boxShadow: "0 10px 40px rgba(139, 41, 66, 0.2)",
+              boxShadow: "0 10px 40px rgba(46, 125, 50, 0.3), 0 0 20px rgba(76, 175, 80, 0.2)",
+              borderWidth: "3px",
             }}
           >
           <button
             onClick={() => removePopup(popup.id)}
-            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#8b2942] text-white text-sm hover:bg-[#c45c7a]"
+            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#2e7d32] to-[#1b5e20] text-white text-sm font-bold hover:from-[#4caf50] hover:to-[#2e7d32] transition-all hover:scale-110 shadow-md border-2 border-[#f1f8e9]"
           >
             ×
           </button>
           <p
-            className="max-w-[280px] text-center text-xl text-[#2d1b2e]"
+            className="max-w-[280px] text-center text-xl text-[#1b5e20] font-medium"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {popup.message}
           </p>
-          <span className="mt-2 block text-center text-2xl">
+          <span className="mt-2 block text-center text-2xl drop-shadow-sm">
             {popup.emoji}
           </span>
           </div>

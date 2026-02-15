@@ -3,12 +3,17 @@
 @theme {
   --font-display: "Great Vibes", cursive;
   --font-body: "Cormorant Garamond", serif;
-  --color-rose-deep: #8b2942;
-  --color-rose-soft: #c45c7a;
-  --color-blush: #f8e8ec;
-  --color-cream: #fdf6f8;
-  --color-gold: #d4a574;
-  --color-ink: #2d1b2e;
+  --color-forest-deep: #1b5e20;
+  --color-emerald-rich: #2e7d32;
+  --color-green-fresh: #4caf50;
+  --color-mint-light: #81c784;
+  --color-sage: #a5d6a7;
+  --color-spring: #c8e6c9;
+  --color-cream: #f1f8e9;
+  --color-white-green: #f9fdf7;
+  --color-olive: #558b2f;
+  --color-jade: #00695c;
+  --color-teal-dark: #004d40;
 }
 
 @layer base {
@@ -57,10 +62,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(196, 92, 122, 0.3);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(196, 92, 122, 0.5);
+    box-shadow: 0 0 40px rgba(76, 175, 80, 0.6);
   }
 }
 
