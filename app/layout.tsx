@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Great_Vibes, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import ValentineBanner from "./valentine-banner";
 
 const greatVibes = Great_Vibes({
   weight: "400",
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${greatVibes.variable} ${cormorant.variable}`}>
       <body className="min-h-screen overflow-x-hidden bg-[#fdf6f8] text-[#2d1b2e] antialiased">
+        <ValentineBanner />
         {children}
       </body>
     </html>
