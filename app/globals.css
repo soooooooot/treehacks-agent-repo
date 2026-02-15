@@ -15,6 +15,91 @@
   html {
     font-family: var(--font-body);
   }
+  
+  /* Festive TreeHacks/Valentine's Border */
+  body {
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+    padding: 12px;
+    border-radius: 0;
+    background: linear-gradient(
+      90deg,
+      #ff006e 0%,    /* Hot pink */
+      #ff1654 10%,   /* Red-pink */
+      #8338ec 20%,   /* Purple */
+      #fb5607 30%,   /* Orange */
+      #ffbe0b 40%,   /* Yellow */
+      #06ffa5 50%,   /* Cyan */
+      #00d9ff 60%,   /* Electric blue */
+      #7209b7 70%,   /* Deep purple */
+      #f72585 80%,   /* Magenta */
+      #ff006e 90%,   /* Hot pink */
+      #ff1654 100%   /* Red-pink */
+    );
+    background-size: 400% 100%;
+    animation: border-flow 8s linear infinite;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  /* Additional sparkle effect layer */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9998;
+    padding: 12px;
+    border-radius: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: sparkle 3s linear infinite;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+  }
+}
+
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    background-position: -200% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
 }
 
 @keyframes pop-in {
