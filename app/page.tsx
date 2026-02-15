@@ -141,10 +141,13 @@ export default function Home() {
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
         <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="mb-4 text-6xl font-bold text-[#FF1493] md:text-8xl drop-shadow-lg"
+          style={{ 
+            fontFamily: "var(--font-display)",
+            textShadow: "2px 2px 4px rgba(0,0,0,0.2)"
+          }}
         >
-          Random Valentines
+          I love TreeHacks
         </h1>
         <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
           Click anywhere or press space for a valentine
