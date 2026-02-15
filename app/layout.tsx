@@ -15,8 +15,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Random Valentines",
-  description: "A whimsical popup of random valentine messages",
+  title: "Ian's Personal TreeHacks Site",
+  description: "Ian's personal TreeHacks website - where we love Interaction Company and celebrate innovation",
 };
 
 export default function RootLayout({

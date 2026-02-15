@@ -140,12 +140,35 @@ export default function Home() {
 
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
+        {/* Prominent "We love Interaction Company" banner */}
+        <div className="mb-8 animate-pulse-glow rounded-3xl border-4 border-[#8b2942] bg-gradient-to-r from-[#8b2942] via-[#c45c7a] to-[#8b2942] px-12 py-6 shadow-2xl">
+          <h2 
+            className="text-5xl font-bold text-white md:text-7xl animate-heart-beat"
+            style={{ 
+              fontFamily: "var(--font-display)",
+              textShadow: "3px 3px 6px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.5)"
+            }}
+          >
+            We love Interaction Company
+          </h2>
+        </div>
+
         <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
+          className="mb-2 text-5xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-7xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Random Valentines
+          Ian's Personal TreeHacks Site
         </h1>
+        
+        <div className="mb-8 text-center">
+          <p className="mb-2 text-2xl font-semibold text-[#8b2942] md:text-3xl">
+            🌲 TreeHacks 2024 🌲
+          </p>
+          <p className="text-lg text-[#c45c7a] md:text-xl">
+            Built with ❤️ by Ian
+          </p>
+        </div>
+
         <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
