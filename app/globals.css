@@ -92,3 +92,50 @@
 .animate-heart-beat {
   animation: heart-beat 1.2s ease-in-out infinite;
 }
+
+/* Deploy Coding Agent Button Styles */
+.deploy-agent-button {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.deploy-agent-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.deploy-agent-button:hover::before {
+  animation: shine 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+.deploy-agent-button:focus {
+  outline: 4px solid rgba(196, 92, 122, 0.5);
+  outline-offset: 4px;
+}
+
+.deploy-agent-button:active {
+  animation: none;
+}

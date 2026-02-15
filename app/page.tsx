@@ -116,6 +116,13 @@ export default function Home() {
     []
   );
 
+  const handleDeployCodingAgent = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // TODO: Add deployment logic here
+    console.log("Deploy Coding Agent clicked!");
+    alert("Deploy Coding Agent functionality coming soon!");
+  };
+
   return (
     <main
       className="relative min-h-screen cursor-pointer overflow-hidden"
@@ -149,6 +156,20 @@ export default function Home() {
         <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
+
+        {/* LARGE DEPLOY CODING AGENT BUTTON */}
+        <button
+          onClick={handleDeployCodingAgent}
+          className="deploy-agent-button mb-8 rounded-2xl bg-gradient-to-r from-[#8b2942] to-[#c45c7a] px-16 py-7 text-3xl font-bold text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_50px_rgba(196,92,122,0.6)] active:scale-100 md:px-20 md:py-9 md:text-4xl"
+          style={{ 
+            fontFamily: "var(--font-body)",
+            letterSpacing: "0.02em",
+            textShadow: "0 2px 4px rgba(0,0,0,0.2)",
+          }}
+        >
+          🚀 Deploy Coding Agent
+        </button>
+
         <button
           onClick={(e) => {
             e.stopPropagation();
