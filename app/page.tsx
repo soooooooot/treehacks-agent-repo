@@ -149,16 +149,27 @@ export default function Home() {
         <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            addPopup();
-          }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
-          style={{ fontFamily: "var(--font-body)" }}
-        >
-          Send a Valentine
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              addPopup();
+            }}
+            className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Send a Valentine
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            className="rounded-full bg-[#c45c7a] px-8 py-4 text-white font-medium transition-all hover:bg-[#f8e8ec] hover:text-[#8b2942] hover:scale-105 active:scale-95 border-2 border-[#c45c7a]"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            We love TreeHacks!
+          </button>
+        </div>
       </div>
 
       {/* Popup cards */}
