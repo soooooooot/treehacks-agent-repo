@@ -37,18 +37,18 @@ const VALENTINES = [
 
 const HEART_EMOJIS = ["💕", "💖", "💗", "💓", "💝", "💘", "💞", "❤️", "💜", "💗"];
 
-function randomItem<T>(arr: T[]): T {
+const randomItem = <T,>(arr: T[]): T => {
   return arr[Math.floor(Math.random() * arr.length)];
-}
+};
 
-function getRandomPosition() {
+const getRandomPosition = () => {
   return {
     x: Math.random() * 70 + 15,
     y: Math.random() * 60 + 10,
     rotation: (Math.random() - 0.5) * 20,
     delay: Math.random() * 300,
   };
-}
+};
 
 export default function Home() {
   const [popups, setPopups] = useState<Array<{
