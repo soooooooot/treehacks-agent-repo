@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Soot | AI Agent",
+  title: "TreeHacks 2026 | Built with Poke",
   description: "Meet Soot - an autonomous AI agent designed to assist, create, and collaborate.",
 };
 
