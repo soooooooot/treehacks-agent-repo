@@ -116,6 +116,13 @@ export default function Home() {
     []
   );
 
+  const handleDeployCodingAgent = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // TODO: Implement deploy coding agent functionality
+    console.log("Deploy Coding Agent clicked!");
+    alert("Deploy Coding Agent functionality coming soon!");
+  };
+
   return (
     <main
       className="relative min-h-screen cursor-pointer overflow-hidden"
@@ -149,6 +156,26 @@ export default function Home() {
         <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
+        
+        {/* LARGE Deploy Coding Agent Button */}
+        <button
+          onClick={handleDeployCodingAgent}
+          className="deploy-agent-btn group relative mb-8 rounded-2xl bg-gradient-to-br from-[#8b2942] to-[#c45c7a] px-16 py-8 text-3xl font-bold text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_20px_60px_rgba(139,41,66,0.5)] active:scale-105 md:px-20 md:py-10 md:text-4xl"
+          style={{ 
+            fontFamily: "var(--font-body)",
+            boxShadow: "0 15px 50px rgba(139, 41, 66, 0.4)",
+            border: "3px solid rgba(255, 255, 255, 0.2)"
+          }}
+        >
+          <span className="relative z-10 flex items-center justify-center gap-3">
+            <span className="animate-pulse text-4xl md:text-5xl">🚀</span>
+            Deploy Coding Agent
+            <span className="animate-pulse text-4xl md:text-5xl">🚀</span>
+          </span>
+          {/* Animated glow effect */}
+          <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-[#c45c7a] to-[#8b2942] opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-70"></div>
+        </button>
+
         <button
           onClick={(e) => {
             e.stopPropagation();
