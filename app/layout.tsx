@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Soot | AI Agent",
-  description: "Meet Soot - an autonomous AI agent designed to assist, create, and collaborate.",
+  description: "A TreeHacks 2026 project built with Poke and MCP.",
 };
 
 export default function RootLayout({
