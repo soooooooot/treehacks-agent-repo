@@ -138,6 +138,19 @@ export default function Home() {
         ))}
       </div>
 
+      {/* Prominent TreeHacks Banner */}
+      <div className="relative z-20 bg-gradient-to-r from-pink-500 via-pink-400 to-pink-500 py-8 text-center shadow-2xl">
+        <h1
+          className="text-7xl font-bold text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] animate-pulse md:text-9xl"
+          style={{
+            textShadow: '3px 3px 6px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.5)',
+            letterSpacing: '0.05em'
+          }}
+        >
+          I love TreeHacks
+        </h1>
+      </div>
+
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
         <h1
