@@ -149,16 +149,28 @@ export default function Home() {
         <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            addPopup();
-          }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
-          style={{ fontFamily: "var(--font-body)" }}
-        >
-          Send a Valentine
-        </button>
+        <div className="flex flex-col gap-4 items-center">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              addPopup();
+            }}
+            className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Send a Valentine
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              // Add gift functionality here
+            }}
+            className="rounded-full bg-[#c45c7a] px-8 py-4 text-white font-medium transition-all hover:bg-[#8b2942] hover:scale-105 active:scale-95 shadow-lg"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            See your gift 💝
+          </button>
+        </div>
       </div>
 
       {/* Popup cards */}
