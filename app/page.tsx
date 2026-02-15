@@ -104,6 +104,13 @@ export default function Home() {
     addPopup();
   };
 
+  const handleDeployCodingAgent = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // TODO: Implement deploy coding agent functionality
+    console.log("Deploy Coding Agent clicked!");
+    alert("Deploy Coding Agent functionality will be implemented here!");
+  };
+
   const floatingHearts = useMemo(
     () =>
       Array.from({ length: 12 }).map((_, i) => ({
@@ -140,6 +147,18 @@ export default function Home() {
 
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
+        {/* LARGE PROMINENT DEPLOY BUTTON */}
+        <button
+          onClick={handleDeployCodingAgent}
+          className="mb-8 rounded-2xl bg-gradient-to-r from-[#8b2942] to-[#c45c7a] px-16 py-8 text-3xl font-bold text-white shadow-2xl transition-all hover:shadow-[0_0_40px_rgba(196,92,122,0.6)] hover:scale-105 active:scale-100 animate-pulse-glow md:px-20 md:py-10 md:text-4xl"
+          style={{ 
+            fontFamily: "var(--font-body)",
+            boxShadow: "0 10px 50px rgba(139, 41, 66, 0.4)",
+          }}
+        >
+          🚀 Deploy Coding Agent
+        </button>
+
         <h1
           className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
           style={{ fontFamily: "var(--font-display)" }}
