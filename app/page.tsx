@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useMemo } from "react";
+import TreeHacksStatsDashboard from "./components/TreeHacksStatsDashboard";
 
 const VALENTINES = [
   "You make my heart skip a beat",
@@ -117,88 +118,94 @@ export default function Home() {
   );
 
   return (
-    <main
-      className="relative min-h-screen cursor-pointer overflow-hidden"
-      onClick={handleClick}
-    >
-      {/* Floating hearts background */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {floatingHearts.map((heart, i) => (
-          <span
-            key={i}
-            className="absolute text-2xl opacity-20"
-            style={{
-              left: `${heart.left}%`,
-              top: `${heart.top}%`,
-              animation: `float ${heart.duration}s ease-in-out ${heart.delay}s infinite`,
-            }}
-          >
-            {heart.emoji}
-          </span>
-        ))}
-      </div>
+    <main className="relative min-h-screen overflow-hidden">
+      {/* TreeHacks Stats Dashboard */}
+      <TreeHacksStatsDashboard />
 
-      {/* Hero area */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
-        <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Random Valentines
-        </h1>
-        <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
-          Click anywhere or press space for a valentine
-        </p>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            addPopup();
-          }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
-          style={{ fontFamily: "var(--font-body)" }}
-        >
-          Send a Valentine
-        </button>
-      </div>
+      {/* Valentine Section */}
+      <div
+        className="relative min-h-screen cursor-pointer"
+        onClick={handleClick}
+      >
+        {/* Floating hearts background */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {floatingHearts.map((heart, i) => (
+            <span
+              key={i}
+              className="absolute text-2xl opacity-20"
+              style={{
+                left: `${heart.left}%`,
+                top: `${heart.top}%`,
+                animation: `float ${heart.duration}s ease-in-out ${heart.delay}s infinite`,
+              }}
+            >
+              {heart.emoji}
+            </span>
+          ))}
+        </div>
 
-      {/* Popup cards */}
-      {popups.map((popup) => (
-        <div
-          key={popup.id}
-          data-popup
-          className="absolute z-50"
-          style={{
-            left: `${popup.x}%`,
-            top: `${popup.y}%`,
-            transform: `translate(-50%, -50%) rotate(${popup.rotation}deg)`,
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div
-            className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#fdf6f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
-            style={{
-              animationDelay: `${popup.delay}ms`,
-              boxShadow: "0 10px 40px rgba(139, 41, 66, 0.2)",
-            }}
-          >
-          <button
-            onClick={() => removePopup(popup.id)}
-            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#8b2942] text-white text-sm hover:bg-[#c45c7a]"
-          >
-            ×
-          </button>
-          <p
-            className="max-w-[280px] text-center text-xl text-[#2d1b2e]"
+        {/* Hero area */}
+        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
+          <h1
+            className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            {popup.message}
+            Random Valentines
+          </h1>
+          <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
+            Click anywhere or press space for a valentine
           </p>
-          <span className="mt-2 block text-center text-2xl">
-            {popup.emoji}
-          </span>
-          </div>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              addPopup();
+            }}
+            className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Send a Valentine
+          </button>
         </div>
-      ))}
+
+        {/* Popup cards */}
+        {popups.map((popup) => (
+          <div
+            key={popup.id}
+            data-popup
+            className="absolute z-50"
+            style={{
+              left: `${popup.x}%`,
+              top: `${popup.y}%`,
+              transform: `translate(-50%, -50%) rotate(${popup.rotation}deg)`,
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#fdf6f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+              style={{
+                animationDelay: `${popup.delay}ms`,
+                boxShadow: "0 10px 40px rgba(139, 41, 66, 0.2)",
+              }}
+            >
+            <button
+              onClick={() => removePopup(popup.id)}
+              className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#8b2942] text-white text-sm hover:bg-[#c45c7a]"
+            >
+              ×
+            </button>
+            <p
+              className="max-w-[280px] text-center text-xl text-[#2d1b2e]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {popup.message}
+            </p>
+            <span className="mt-2 block text-center text-2xl">
+              {popup.emoji}
+            </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
