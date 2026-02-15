@@ -140,12 +140,30 @@ export default function Home() {
 
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
-        <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
+        {/* MASSIVE Happy Valentine's Day Banner */}
+        <div className="mb-8 text-center animate-heart-beat">
+          <h1
+            className="text-[64px] sm:text-[96px] md:text-[128px] lg:text-[160px] xl:text-[192px] font-black leading-none text-[#8b2942] drop-shadow-2xl"
+            style={{ 
+              fontFamily: "var(--font-display)",
+              textShadow: "0 8px 32px rgba(139, 41, 66, 0.4), 0 0 60px rgba(196, 92, 122, 0.6)",
+              WebkitTextStroke: "2px #c45c7a",
+              paintOrder: "stroke fill",
+            }}
+          >
+            Happy Valentine&apos;s Day
+          </h1>
+          <div className="mt-4 text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px]">
+            💕💖💗💓💝
+          </div>
+        </div>
+
+        <h2
+          className="mb-4 text-4xl font-bold text-[#8b2942] md:text-5xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Random Valentines
-        </h1>
+        </h2>
         <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
