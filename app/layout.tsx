@@ -27,7 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${greatVibes.variable} ${cormorant.variable}`}>
       <body className="min-h-screen overflow-x-hidden bg-[#fdf6f8] text-[#2d1b2e] antialiased">
-        {children}
+        {/* Green TreeHacks Banner */}
+        <div className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-r from-[#00b140] to-[#00d952] px-6 py-4 shadow-lg">
+          <p className="text-center text-2xl md:text-3xl font-bold text-white tracking-wide" style={{ fontFamily: "var(--font-body)", textShadow: "0 2px 4px rgba(0,0,0,0.2)" }}>
+            We love TreeHacks
+          </p>
+        </div>
+        {/* Add padding to prevent content from being hidden under fixed banner */}
+        <div className="pt-16">
+          {children}
+        </div>
       </body>
     </html>
   );
