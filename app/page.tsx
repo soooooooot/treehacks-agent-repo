@@ -121,6 +121,40 @@ export default function Home() {
       className="relative min-h-screen cursor-pointer overflow-hidden"
       onClick={handleClick}
     >
+      {/* Valentine's Day Banner */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 z-20 overflow-hidden">
+        <div className="relative bg-gradient-to-r from-pink-400 via-pink-500 to-rose-400 py-4 px-6 shadow-lg">
+          {/* Decorative hearts */}
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-3xl animate-heart-beat opacity-90">
+            💖
+          </div>
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 text-3xl animate-heart-beat opacity-90" style={{ animationDelay: '0.3s' }}>
+            💕
+          </div>
+          <div className="absolute left-16 top-1/2 -translate-y-1/2 text-xl opacity-70 animate-float">
+            💝
+          </div>
+          <div className="absolute right-16 top-1/2 -translate-y-1/2 text-xl opacity-70 animate-float" style={{ animationDelay: '0.5s' }}>
+            💗
+          </div>
+          
+          {/* Banner text */}
+          <h2 
+            className="text-center text-4xl md:text-5xl font-[family-name:var(--font-display)] text-white drop-shadow-lg animate-pulse-glow"
+            style={{ fontFamily: 'var(--font-display)', textShadow: '2px 2px 4px rgba(139, 41, 66, 0.3)' }}
+          >
+            Happy Valentine's Day! 💘
+          </h2>
+          
+          {/* Sparkle effects */}
+          <div className="absolute top-2 left-1/4 text-yellow-200 text-sm animate-float">✨</div>
+          <div className="absolute bottom-2 right-1/3 text-yellow-200 text-sm animate-float" style={{ animationDelay: '0.8s' }}>✨</div>
+        </div>
+        
+        {/* Bottom border decoration */}
+        <div className="h-1 bg-gradient-to-r from-transparent via-pink-300 to-transparent opacity-60"></div>
+      </div>
+
       {/* Floating hearts background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {floatingHearts.map((heart, i) => (
@@ -139,7 +173,7 @@ export default function Home() {
       </div>
 
       {/* Hero area */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8 pt-28">
         <h1
           className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
           style={{ fontFamily: "var(--font-display)" }}
