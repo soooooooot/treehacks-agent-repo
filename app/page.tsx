@@ -119,17 +119,19 @@ export default function Home() {
   return (
     <main
       className="relative min-h-screen cursor-pointer overflow-hidden"
-      onClick={handleClick}
+      style={{ background: "linear-gradient(135deg, #E6E6FA 0%, #DCD0FF 50%, #B19CD9 100%)" }}
     >
       {/* Floating hearts background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {floatingHearts.map((heart, i) => (
           <span
             key={i}
-            className="absolute text-2xl opacity-20"
+            className="absolute text-2xl"
             style={{
               left: `${heart.left}%`,
               top: `${heart.top}%`,
+              opacity: 0.25,
+              color: i % 2 === 0 ? "#9370DB" : "#7B68EE",
               animation: `float ${heart.duration}s ease-in-out ${heart.delay}s infinite`,
             }}
           >
@@ -141,12 +143,19 @@ export default function Home() {
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
         <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="mb-4 text-6xl font-[family-name:var(--font-display)] md:text-8xl"
+          style={{ 
+            fontFamily: "var(--font-display)",
+            color: "#4B0082",
+            textShadow: "2px 2px 4px rgba(75, 0, 130, 0.3)"
+          }}
         >
           Random Valentines
         </h1>
-        <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
+        <p 
+          className="mb-12 text-center text-xl md:text-2xl"
+          style={{ color: "#6A5ACD" }}
+        >
           Click anywhere or press space for a valentine
         </p>
         <button
@@ -154,8 +163,21 @@ export default function Home() {
             e.stopPropagation();
             addPopup();
           }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
-          style={{ fontFamily: "var(--font-body)" }}
+          className="rounded-full px-8 py-4 font-medium transition-all hover:scale-105 active:scale-95"
+          style={{ 
+            fontFamily: "var(--font-body)",
+            backgroundColor: "#6A5ACD",
+            color: "#FFFFFF",
+            boxShadow: "0 4px 15px rgba(106, 90, 205, 0.4)"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#7B68EE";
+            e.currentTarget.style.boxShadow = "0 6px 20px rgba(123, 104, 238, 0.5)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#6A5ACD";
+            e.currentTarget.style.boxShadow = "0 4px 15px rgba(106, 90, 205, 0.4)";
+          }}
         >
           Send a Valentine
         </button>
@@ -175,25 +197,43 @@ export default function Home() {
           onClick={(e) => e.stopPropagation()}
         >
           <div
-            className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#fdf6f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+            className="animate-pop-in rounded-2xl p-6 transition-all hover:scale-105 hover:shadow-2xl"
             style={{
               animationDelay: `${popup.delay}ms`,
-              boxShadow: "0 10px 40px rgba(139, 41, 66, 0.2)",
+              backgroundColor: "#E6E6FA",
+              border: "2px solid #B19CD9",
+              boxShadow: "0 10px 40px rgba(106, 90, 205, 0.3)",
             }}
           >
           <button
             onClick={() => removePopup(popup.id)}
-            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#8b2942] text-white text-sm hover:bg-[#c45c7a]"
+            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full text-sm transition-colors"
+            style={{
+              backgroundColor: "#6A5ACD",
+              color: "#FFFFFF"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#7B68EE";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
           >
             ×
           </button>
           <p
-            className="max-w-[280px] text-center text-xl text-[#2d1b2e]"
-            style={{ fontFamily: "var(--font-display)" }}
+            className="max-w-[280px] text-center text-xl"
+            style={{ 
+              fontFamily: "var(--font-display)",
+              color: "#483D8B"
+            }}
           >
             {popup.message}
           </p>
-          <span className="mt-2 block text-center text-2xl">
+          <span 
+            className="mt-2 block text-center text-2xl"
+            style={{ filter: "hue-rotate(270deg)" }}
+          >
             {popup.emoji}
           </span>
           </div>
