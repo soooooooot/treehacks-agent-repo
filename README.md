@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## About This Project
+
+This is Ian's Next.js application built for testing and development.
+
 ## Getting Started
 
 First, run the development server:
