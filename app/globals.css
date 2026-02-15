@@ -9,6 +9,9 @@
   --color-cream: #fdf6f8;
   --color-gold: #d4a574;
   --color-ink: #2d1b2e;
+  --color-pink-bright: #ff69b4;
+  --color-pink-hot: #ff1493;
+  --color-pink-deep: #ff85c1;
 }
 
 @layer base {
