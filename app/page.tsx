@@ -35,7 +35,7 @@ const VALENTINES = [
   "You're my favorite person to annoy",
 ];
 
-const HEART_EMOJIS = ["💕", "💖", "💗", "💓", "💝", "💘", "💞", "❤️", "💜", "💗"];
+const SQUARE_EMOJIS = ["■", "▪", "⬛", "■", "▪", "⬛", "■", "▪", "⬛", "■"];
 
 function randomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -71,7 +71,7 @@ export default function Home() {
       {
         id,
         message: randomItem(VALENTINES),
-        emoji: randomItem(HEART_EMOJIS),
+        emoji: randomItem(SQUARE_EMOJIS),
         x: pos.x,
         y: pos.y,
         rotation: pos.rotation,
@@ -104,12 +104,12 @@ export default function Home() {
     addPopup();
   };
 
-  const floatingHearts = useMemo(
+  const floatingSquares = useMemo(
     () =>
       Array.from({ length: 12 }).map((_, i) => ({
         left: 10 + i * 8,
         top: 15 + (i % 5) * 18,
-        emoji: HEART_EMOJIS[i % HEART_EMOJIS.length],
+        emoji: SQUARE_EMOJIS[i % SQUARE_EMOJIS.length],
         duration: 4 + (i % 3),
         delay: i * 0.3,
       })),
@@ -121,19 +121,19 @@ export default function Home() {
       className="relative min-h-screen cursor-pointer overflow-hidden"
       onClick={handleClick}
     >
-      {/* Floating hearts background */}
+      {/* Floating squares background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {floatingHearts.map((heart, i) => (
+        {floatingSquares.map((square, i) => (
           <span
             key={i}
             className="absolute text-2xl opacity-20"
             style={{
-              left: `${heart.left}%`,
-              top: `${heart.top}%`,
-              animation: `float ${heart.duration}s ease-in-out ${heart.delay}s infinite`,
+              left: `${square.left}%`,
+              top: `${square.top}%`,
+              animation: `float ${square.duration}s ease-in-out ${square.delay}s infinite`,
             }}
           >
-            {heart.emoji}
+            {square.emoji}
           </span>
         ))}
       </div>

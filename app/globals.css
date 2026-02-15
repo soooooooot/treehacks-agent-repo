@@ -64,7 +64,7 @@
   }
 }
 
-@keyframes heart-beat {
+@keyframes square-pulse {
   0%, 100% {
     transform: scale(1);
   }
@@ -89,6 +89,6 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-.animate-heart-beat {
-  animation: heart-beat 1.2s ease-in-out infinite;
+.animate-square-pulse {
+  animation: square-pulse 1.2s ease-in-out infinite;
 }
