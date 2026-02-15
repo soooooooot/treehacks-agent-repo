@@ -141,12 +141,12 @@ export default function Home() {
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
         <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
+          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#ec4899] md:text-8xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Random Valentines
         </h1>
-        <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
+        <p className="mb-12 text-center text-xl text-[#f472b6] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
         <button
@@ -188,7 +188,7 @@ export default function Home() {
             ×
           </button>
           <p
-            className="max-w-[280px] text-center text-xl text-[#2d1b2e]"
+            className="max-w-[280px] text-center text-xl text-[#ec4899]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {popup.message}
