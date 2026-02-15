@@ -118,7 +118,7 @@ export default function Home() {
 
   return (
     <main
-      className="relative min-h-screen cursor-pointer overflow-hidden"
+      className="relative min-h-screen cursor-pointer overflow-hidden bg-[#d8bfe8]"
       onClick={handleClick}
     >
       {/* Floating hearts background */}
@@ -131,6 +131,7 @@ export default function Home() {
               left: `${heart.left}%`,
               top: `${heart.top}%`,
               animation: `float ${heart.duration}s ease-in-out ${heart.delay}s infinite`,
+              color: '#9b59b6',
             }}
           >
             {heart.emoji}
@@ -141,12 +142,12 @@ export default function Home() {
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
         <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
+          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#6b2d8f] md:text-8xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Random Valentines
         </h1>
-        <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
+        <p className="mb-12 text-center text-xl text-[#8b5a9f] md:text-2xl">
           Click anywhere or press space for a valentine
         </p>
         <button
@@ -154,7 +155,7 @@ export default function Home() {
             e.stopPropagation();
             addPopup();
           }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
+          className="rounded-full bg-[#6b2d8f] px-8 py-4 text-[#f3e8f8] font-medium transition-all hover:bg-[#9b59b6] hover:scale-105 active:scale-95 border-2 border-[#8b5a9f]"
           style={{ fontFamily: "var(--font-body)" }}
         >
           Send a Valentine
@@ -175,20 +176,20 @@ export default function Home() {
           onClick={(e) => e.stopPropagation()}
         >
           <div
-            className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#fdf6f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+            className="animate-pop-in rounded-2xl border-2 border-[#b298dc] bg-[#f3e8f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
             style={{
               animationDelay: `${popup.delay}ms`,
-              boxShadow: "0 10px 40px rgba(139, 41, 66, 0.2)",
+              boxShadow: "0 10px 40px rgba(107, 45, 143, 0.3)",
             }}
           >
           <button
             onClick={() => removePopup(popup.id)}
-            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#8b2942] text-white text-sm hover:bg-[#c45c7a]"
+            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#6b2d8f] text-[#f3e8f8] text-sm hover:bg-[#9b59b6] border-2 border-[#8b5a9f]"
           >
             ×
           </button>
           <p
-            className="max-w-[280px] text-center text-xl text-[#2d1b2e]"
+            className="max-w-[280px] text-center text-xl text-[#4a2861]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {popup.message}
