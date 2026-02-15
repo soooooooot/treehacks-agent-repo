@@ -92,3 +92,15 @@
 .animate-heart-beat {
   animation: heart-beat 1.2s ease-in-out infinite;
 }
+
+@keyframes tail-wag {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
