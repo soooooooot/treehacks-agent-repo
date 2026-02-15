@@ -26,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${greatVibes.variable} ${cormorant.variable}`}>
-      <body className="min-h-screen overflow-x-hidden bg-[#fdf6f8] text-[#2d1b2e] antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-[#FFE4E9] text-[#8B0A50] antialiased" style={{
+        background: 'linear-gradient(135deg, #FFE4E9 0%, #FFC0CB 50%, #FFB6C1 100%)'
+      }}>
         {children}
       </body>
     </html>

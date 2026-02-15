@@ -3,12 +3,29 @@
 @theme {
   --font-display: "Great Vibes", cursive;
   --font-body: "Cormorant Garamond", serif;
-  --color-rose-deep: #8b2942;
-  --color-rose-soft: #c45c7a;
-  --color-blush: #f8e8ec;
-  --color-cream: #fdf6f8;
-  --color-gold: #d4a574;
-  --color-ink: #2d1b2e;
+  
+  /* Pink Theme Color Palette */
+  --color-light-pink: #FFB6C1;
+  --color-hot-pink: #FF69B4;
+  --color-deep-pink: #FF1493;
+  --color-pink: #FFC0CB;
+  --color-material-pink: #E91E63;
+  --color-pale-violet-red: #DB7093;
+  --color-medium-violet-red: #C71585;
+  
+  /* Semantic color mappings */
+  --color-primary: #FF69B4;
+  --color-primary-hover: #FF1493;
+  --color-primary-light: #FFB6C1;
+  --color-secondary: #E91E63;
+  --color-accent: #DB7093;
+  --color-background: #FFC0CB;
+  --color-background-light: #FFE4E9;
+  --color-surface: #FFB6C1;
+  --color-border: #FF69B4;
+  --color-text: #C71585;
+  --color-text-light: #DB7093;
+  --color-text-dark: #8B0A50;
 }
 
 @layer base {
@@ -57,10 +74,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(196, 92, 122, 0.3);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(196, 92, 122, 0.5);
+    box-shadow: 0 0 40px rgba(255, 105, 180, 0.7);
   }
 }
 

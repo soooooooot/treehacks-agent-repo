@@ -120,17 +120,22 @@ export default function Home() {
     <main
       className="relative min-h-screen cursor-pointer overflow-hidden"
       onClick={handleClick}
+      style={{
+        background: 'linear-gradient(135deg, #FFE4E9 0%, #FFC0CB 30%, #FFB6C1 70%, #FF69B4 100%)'
+      }}
     >
       {/* Floating hearts background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {floatingHearts.map((heart, i) => (
           <span
             key={i}
-            className="absolute text-2xl opacity-20"
+            className="absolute text-2xl opacity-30"
             style={{
               left: `${heart.left}%`,
               top: `${heart.top}%`,
               animation: `float ${heart.duration}s ease-in-out ${heart.delay}s infinite`,
+              color: i % 2 === 0 ? '#FF69B4' : '#E91E63',
+              filter: 'drop-shadow(0 2px 4px rgba(255, 105, 180, 0.3))',
             }}
           >
             {heart.emoji}
@@ -141,12 +146,18 @@ export default function Home() {
       {/* Hero area */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-8">
         <h1
-          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#8b2942] md:text-8xl"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="mb-4 text-6xl font-[family-name:var(--font-display)] text-[#C71585] md:text-8xl"
+          style={{ 
+            fontFamily: "var(--font-display)",
+            textShadow: '2px 2px 4px rgba(255, 105, 180, 0.3)',
+            color: '#C71585'
+          }}
         >
           Random Valentines
         </h1>
-        <p className="mb-12 text-center text-xl text-[#c45c7a] md:text-2xl">
+        <p className="mb-12 text-center text-xl text-[#E91E63] md:text-2xl font-semibold" style={{
+          textShadow: '1px 1px 2px rgba(255, 255, 255, 0.5)'
+        }}>
           Click anywhere or press space for a valentine
         </p>
         <button
@@ -154,8 +165,23 @@ export default function Home() {
             e.stopPropagation();
             addPopup();
           }}
-          className="rounded-full bg-[#8b2942] px-8 py-4 text-white font-medium transition-all hover:bg-[#c45c7a] hover:scale-105 active:scale-95"
-          style={{ fontFamily: "var(--font-body)" }}
+          className="rounded-full px-8 py-4 text-white font-bold text-lg transition-all shadow-lg active:scale-95"
+          style={{ 
+            fontFamily: "var(--font-body)",
+            background: 'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)',
+            boxShadow: '0 4px 15px rgba(255, 20, 147, 0.4), 0 8px 25px rgba(255, 105, 180, 0.3)',
+            border: '2px solid #FF1493'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'linear-gradient(135deg, #E91E63 0%, #FF1493 100%)';
+            e.currentTarget.style.transform = 'scale(1.05)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 20, 147, 0.5), 0 10px 35px rgba(255, 105, 180, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)';
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 20, 147, 0.4), 0 8px 25px rgba(255, 105, 180, 0.3)';
+          }}
         >
           Send a Valentine
         </button>
@@ -175,25 +201,46 @@ export default function Home() {
           onClick={(e) => e.stopPropagation()}
         >
           <div
-            className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#fdf6f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+            className="animate-pop-in rounded-2xl p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
             style={{
               animationDelay: `${popup.delay}ms`,
-              boxShadow: "0 10px 40px rgba(139, 41, 66, 0.2)",
+              background: 'linear-gradient(135deg, #FFE4E9 0%, #FFC0CB 100%)',
+              border: '3px solid #FF69B4',
+              boxShadow: '0 10px 40px rgba(255, 105, 180, 0.4), 0 0 20px rgba(255, 20, 147, 0.2)',
             }}
           >
           <button
             onClick={() => removePopup(popup.id)}
-            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#8b2942] text-white text-sm hover:bg-[#c45c7a]"
+            className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full text-white text-sm font-bold transition-all shadow-md"
+            style={{
+              background: 'linear-gradient(135deg, #FF1493 0%, #E91E63 100%)',
+              border: '2px solid #C71585',
+              boxShadow: '0 2px 8px rgba(255, 20, 147, 0.4)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(135deg, #C71585 0%, #DB7093 100%)';
+              e.currentTarget.style.transform = 'scale(1.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(135deg, #FF1493 0%, #E91E63 100%)';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
           >
             ×
           </button>
           <p
-            className="max-w-[280px] text-center text-xl text-[#2d1b2e]"
-            style={{ fontFamily: "var(--font-display)" }}
+            className="max-w-[280px] text-center text-xl font-medium"
+            style={{ 
+              fontFamily: "var(--font-display)",
+              color: '#8B0A50',
+              textShadow: '0 1px 2px rgba(255, 192, 203, 0.5)'
+            }}
           >
             {popup.message}
           </p>
-          <span className="mt-2 block text-center text-2xl">
+          <span className="mt-2 block text-center text-2xl" style={{
+            filter: 'drop-shadow(0 2px 4px rgba(255, 105, 180, 0.3))'
+          }}>
             {popup.emoji}
           </span>
           </div>
