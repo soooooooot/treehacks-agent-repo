@@ -175,7 +175,7 @@ export default function Home() {
           onClick={(e) => e.stopPropagation()}
         >
           <div
-            className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#fdf6f8] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+            className="animate-pop-in rounded-2xl border-2 border-[#d4a574]/50 bg-[#8b6f47] p-6 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
             style={{
               animationDelay: `${popup.delay}ms`,
               boxShadow: "0 10px 40px rgba(139, 41, 66, 0.2)",
